@@ -1,11 +1,13 @@
 # Google Cloud Platform
 
-A project Represents a billable unit that contains many application and resources.
+GCP includes core infrastructure, databases, analytics, AI and more. The platform has over 100 services spanning IaaS, PaaS, and SaaS.
 
 - Web Console
 - Cloud Shell & SDK (administrators / DevOps)
 - Mobile App
 - REST API
+
+A project represents a billable unit that contains many application and resources.
 
 ## Compute Services
 
@@ -21,6 +23,8 @@ For persitance the Vms needs to be attatched to an SSD disk. All VMs are charged
 - _Committed use discounts:_ Offered by purchases based on 1-3 year contracts.
 
 #### Configure a Cloud VM
+
+_Ubuntu 18.04 LTS demo (apache2) available at http://35.192.140.204_
 
 1. Enter to your GCP Console https://console.cloud.google.com
 2. Naviage to `Compute > Compute Engine > VM Instances`
@@ -62,3 +66,28 @@ Fully managed platform for deploying web apps at scale. When traffic increase th
 **Serverless** execution environment for building and connecting cloud services. Functions as a Service (**FaaS**)
 
 Developers can deploy API backend functions and consume them as a service (Firebase Cloud Functions). Execute code in a response to an trigger event. There is **NO need to provide a computer/vm/container** to run the application and response to an event.
+
+## Storage Services
+
+Storage services add persitance and durability to applications.
+
+- Object storage
+- Block file systems
+- File systems
+
+The GCP storage services can be used to store:
+
+- Unstructured data
+- Folders and files
+
+### Google Cloud Storage (GCS)
+
+Unified object storage exposed through an API driven access. Can be set for High Frequency Access (high-performance object storage) and Low Frequency Access (backup and archival storage).
+
+_Note: The usage of Persistance Disks (PD) in the usage of Computer Engine VMs provides reliable block storage for GCE VMs (up to 64TB available)_
+
+### Cloud Filestore
+
+_Cloud Filestore demo bucket (Pokemon image collection) available with an authorized API call (OAuth 2.0) to https://storage.googleapis.com/storage/v1/b/htakamif-demo/o_
+
+Delivers NAS-like (fixed export settings and default Unix permissions) filesystem interface and a shared filesystem for managing file storage for applications. Centralized, high-available filesystem for GCE and GKE. Cloud Filestore encrypts data while in transit.
