@@ -169,3 +169,47 @@ Software defined network providing private networking for VMs. Logically isolate
 - **Cloud Interconnect:** Extends on-premises network to GCP via dedicated or partner interconnect.
 - **Cloud VPN:** Connect on-premise environment to GCP securely over the ISP infrastructure through IPSec VPN (more affordable)
 - **Peering:** Enables direct access to Google Cloud resources with reduced internet egress fee (bandwidth that you are charged for outbound interconnectivity)
+
+## Database Sevices
+
+GCP has managed relational RDBMs and NoSQL database services. In-memory database is used for accelerating the performance of apps by caching the most frequently accessed data.
+
+### Cloud SQL
+
+Fully managed RDBMs service that simplifies setup, mantain, manage and administer database instances (no dedicated VMs needed). The Cloud SQL supports 3 types of RDBMs:
+
+- MySQL
+- PostgreSQL
+- Microsoft SQL Server
+
+Delivers scalability, availability, security and reliability of database instances.
+
+#### Configure a MySQL Instance
+
+_Ubuntu 18.04 LTS demo (apache2) available at http://35.192.140.204_
+
+1. Enter to your GCP Console https://console.cloud.google.com
+2. Naviage to `Storage > SQL > MySQL > Create an instance`
+3. Assing an `Instance ID` and assign a password. **Note: Store the connection password for future reference & connections**
+4. Create the instance with your desired configuration. _It might get a few minutes for the SQL database to be online_
+5. Once the database is created you can connect to the SQL CLI through the GCloud shell as follows
+   ```
+   $ gcloud sql connect [db_name]
+   # Enter your database password
+   ```
+
+### Google Cloud Bigtable
+
+Peta-byte, managed NoSQL database service. Scales to billions of rows and thousands of columns, used for large-scale and low-latency applications. Ideal for throughtput-intensive data processing and analytics.
+
+Acts as a storage engine for MapReduce operations, stream processing and machine-learning applications.
+
+### Google Cloud Spanner
+
+Managed and scalable relational database service with the ability to **horizontally scale** across rows, regions and continents. Brings best of relational (consistent ACID transactional operations) and NoSQL databases (ANSI SQL queries). Data is synchronously replicated with global strong consistency, **it´s a truly globally distributed database**.
+
+### Google Cloud Memorystore
+
+A fully-mamaged in-memory data store service for Redis data store. Ideal for applications cahces that provides sub-millisecond data access. It accelerates the performance by reducing the latency of data retrieval.
+
+Support instances up to 300 Gb and network throughtput of 12 Gbps. Integrated with Stackdriver for monitoring.
